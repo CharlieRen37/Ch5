@@ -18,19 +18,16 @@ public class GuessMyNumber{
 		//if (ans.equals("You Got It RIGHT!!!!!!")) {
 		//	return;
 		//}
-		answer(guess,number,life);
 		life=answer(guess,number,life);
 		if(life==3){
 			return;
 		}
 		guess = in.nextInt();	
-		answer(guess,number,life);
 		life=answer(guess,number,life);
 		if(life==2){
 			return;
 		}
 		guess = in.nextInt();	
-		answer(guess,number,life);
 		life=answer(guess,number,life);
 		return;
 	}
@@ -38,20 +35,24 @@ public class GuessMyNumber{
 		System.out.println("Your guess is: " + n);
 		if(a>1){
 			if(n>x){
-				System.out.println("Answer Too High, Take Another Guess: ");
+				System.out.print("Answer Too High, Take Another Guess: ");
 				return a-1;
 			}else if (n<x){
-				System.out.println("Answer Too Low, Take Another Guess: ");
+				System.out.print("Answer Too Low, Take Another Guess: ");
 				return a-1;
 			}else{
 				System.out.println("You Got It RIGHT!!!!!!");
+				return a;
 			}
 		}else{
 			if(n!=x){
 				System.out.println("Answer Incorrect, You Ran Out of Tries. The number was "+x);
+				return a;
 			}else {
 				System.out.println("You Got It RIGHT!!!!!!");
+				return a;
 			}
 		}
 	}
 }
+
